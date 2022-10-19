@@ -11,6 +11,6 @@ The group members are:
 - Medhini Barla
 - Sravya Medikonda
 
-To watch the pitch deck video: [Click here](https://github.com/group-1-the-phoenix/midterm-project-group-1/blob/main/pitch-deck/Pitch_Deck_video_The_Phoenix.mp4)
+To watch the pitch deck video: [Click here](https://drive.google.com/file/d/1z8YfeGtnOX1l_fvs6qsF5jmGBVyqwhoS/view?usp=sharing)
 
-To view the pitch deck slides: [Click here](https://github.com/group-1-the-phoenix/midterm-project-group-1/blob/main/pitch-deck/Pitch_Deck_Slides_The_Phoenix.pdf)
+To view the pitch deck slides: [Click here](https://github.com/group-1-the-phoenix/midterm-project-group-1/blob/main/pitch_deck/Pitch_Deck_Slides_The_Phoenix.pdf)
