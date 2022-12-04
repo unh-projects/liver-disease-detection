@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 from sklearn.preprocessing import StandardScaler
 
 class Util:
-    def __init__(self):
+    def __init__(self, file_path = 'data/indian_liver_patient.csv'):
         self.features = ['Age', 
                          'Gender', 
                          'Total_Bilirubin', 
@@ -22,7 +22,7 @@ class Util:
                          'Albumin_and_Globulin_Ratio']
         
         self.target_col = 'Diagnosis'
-        self.file_path = 'data/indian_liver_patient.csv'
+        self.file_path = file_path
         
     
     def preprocess(self, df):
@@ -48,10 +48,9 @@ class Util:
         y = df[self.target_col]
 
         # Scaling the feature columns
-        scaler = StandardScaler().fit(X)
-        X_scaled = scaler.transform(X)
-        
-        X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.3, random_state=21)
+        # scaler = StandardScaler().fit(X)
+        # X_scaled = scaler.transform(X)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=21)
         
         return X_train, X_test, y_train, y_test
         
@@ -62,15 +61,16 @@ class Util:
         
         print("Fitting the model")
         model.fit(X_train, y_train)
-        
-        accuracy = self.compute_accuracy(model, X_test, y_test)
-        print("Model accuracy: {:.2f}%".format(accuracy))
-        
+                
         return model
     
     def compute_accuracy(self, model, X_test, y_test):
         y_pred = model.predict(X_test)
         return accuracy_score(y_test, y_pred)*100
+    
+    def predict(model, X):
+        prediction = model.predict(X)
+        return prediction
         
         
 
