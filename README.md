@@ -6,7 +6,7 @@ Our topic for the project is "Liver Disease Classification".
 
 The group members are:
 - [Merishna Singh Suwal](https://www.linkedin.com/in/merishna-ss/)
-- [Yasaasvi Thati](https://www.linkedin.com/in/yasasvi-thati-27a3671a1/)
+- [Yasasvi Thati](https://www.linkedin.com/in/yasasvi-thati-27a3671a1/)
 - Vijaya Bhargavi Pedineedi
 - Medhini Barla
 - Sravya Medikonda
