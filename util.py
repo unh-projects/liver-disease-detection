@@ -14,7 +14,7 @@ class Util:
                          'Total_Bilirubin', 
                          'Direct_Bilirubin',
                          'Alkaline_Phosphotase', 
-                         'Alamine_Aminotransferase',
+                         'Alanine_Aminotransferase',
                          'Aspartate_Aminotransferase', 
                          'Total_Proteins', 
                          'Albumin',
@@ -79,7 +79,7 @@ class Util:
         total_bilirubin = col1.text_input("Total_Bilirubin", 0.7)
         direct_bilirubin = col2.text_input("Direct_Bilirubin", 0.1)
         alkaline_phosphotase = col1.text_input("Alkaline_Phosphotase", "182")
-        alamine_aminotransferase = col2.text_input("Alamine_Aminotransferase", 24)
+        Alanine_Aminotransferase = col2.text_input("Alanine_Aminotransferase", 24)
         aspartate_aminotransferase = col1.text_input("Aspartate_Aminotransferase", 19)
         total_proteins = col2.text_input("Total_Proteins", 8.9)
         albumin = col1.text_input("Albumin", 4.9)
@@ -90,7 +90,7 @@ class Util:
                 'total_bilirubin': total_bilirubin, 
                 'direct_bilirubin': direct_bilirubin, 
                 'alkaline_phosphotase': alkaline_phosphotase, 
-                'alamine_aminotransferase': alamine_aminotransferase, 
+                'Alanine_Aminotransferase': Alanine_Aminotransferase, 
                 'aspartate_aminotransferase': aspartate_aminotransferase, 
                 'total_proteins': total_proteins, 
                 'albumin': albumin, 
