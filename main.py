@@ -3,6 +3,10 @@ import pandas as pd
 from util import Util
 import time
 
+st.set_page_config(
+        page_title="Liver Disease Prediction",
+)
+
 util = Util(file_path='./data/indian_liver_patient.csv')
 st.header("LIVER DISEASE PREDICTION APPLICATION")
 
@@ -18,36 +22,51 @@ model = util.build_model(X_train, y_train)
 # Notify the reader that the data was successfully loaded.
 data_load_state.info('Application is ready for predictions.')
 
+
+## FORM for Prediction
 st.subheader("Fill in your patient data here for diagnosis")
 
 with st.form("my_form"):
     # data_dict = util.input_data_fields()
     col1, col2 = st.columns(2)
-    age = col1.text_input("Age", 72)
-    gender = col2.selectbox('Gender',('Male', 'Female'))
-    total_bilirubin = col1.text_input("Total_Bilirubin (mg/dL)", 
-                                        0.7, 
+    age = col1.number_input("Age", 
+                          min_value=None,
+                          value=72,
+                          help="In the United States, the average age at onset of liver cancer is 63 years.")
+    gender = col2.selectbox('Gender',
+                           ('Male', 'Female'),
+                           help="Men are more likely to develop liver cancer than women, by a ratio of 2 to 1.")
+    total_bilirubin = col1.number_input("Total_Bilirubin (mg/dL)", 
+                                        min_value=None,
+                                        value=0.7, 
                                         help="It is normal to have some bilirubin in the blood. A normal level is: 0.1 to 1.2 mg/dL (1.71 to 20.5 µmol/L)")
-    direct_bilirubin = col2.text_input("Direct_Bilirubin (mg/dL)", 
-                                        0.1, 
+    direct_bilirubin = col2.number_input("Direct_Bilirubin (mg/dL)", 
+                                        min_value=None,
+                                        value=0.1, 
                                         help="Normal level for Direct (also called conjugated) bilirubin is less than 0.3 mg/dL.")
-    alkaline_phosphotase = col1.text_input("Alkaline_Phosphotase (IU/L)", 
-                                           "182",
+    alkaline_phosphotase = col1.number_input("Alkaline_Phosphotase (IU/L)", 
+                                           min_value=None,
+                                           value=182,
                                            help="The normal range is 44 to 147 international units per liter (IU/L).")
-    alanine_aminotransferase = col2.text_input("Alanine_Aminotransferase (U/L)", 
-                                                24,
+    alanine_aminotransferase = col2.number_input("Alanine_Aminotransferase (U/L)", 
+                                                min_value=None,
+                                                value=24,
                                                 help="The normal range is 4 to 36 U/L.")
-    aspartate_aminotransferase = col1.text_input("Aspartate_Aminotransferase (U/L)", 
-                                                 19,
+    aspartate_aminotransferase = col1.number_input("Aspartate_Aminotransferase (U/L)", 
+                                                 min_value=None,
+                                                 value=19,
                                                  help="The normal range is 8 to 33 U/L.")
-    total_proteins = col2.text_input("Total_Proteins (g/dL)", 
-                                     8.9,
+    total_proteins = col2.number_input("Total_Proteins (g/dL)", 
+                                     min_value=None,
+                                     value=8.9,
                                      help="The normal range is 6.0 to 8.3 grams per deciliter (g/dL) or 60 to 83 g/L.")
-    albumin = col1.text_input("Albumin (G/dL)", 
-                              4.9,
+    albumin = col1.number_input("Albumin (G/dL)", 
+                              min_value=None,
+                              value=4.9,
                               help="The normal range is 3.4 to 5.4 g/dL (34 to 54 g/L).")
-    albumin_and_globulin_ratio = col2.text_input("Albumin_and_Globulin_Ratio", 
-                                                 1.20,
+    albumin_and_globulin_ratio = col2.number_input("Albumin_and_Globulin_Ratio", 
+                                                 min_value=None,
+                                                 value=1.20,
                                                  help="The normal range for albumin/globulin ratio is over 1 , usually around 1 to 2.")
 
 
@@ -71,7 +90,6 @@ with st.form("my_form"):
             time.sleep(3)
 
         prediction = model.predict(data_values)
-
         prediction = "No liver disease" if prediction == 0 else "Liver disease"
  
         st.subheader("Diagnosis:")
