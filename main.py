@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from util import Util
-import time
+import time, random
 
 st.set_page_config(
         page_title="Liver Disease Prediction",
@@ -12,8 +12,9 @@ st.header("LIVER DISEASE PREDICTION APPLICATION")
 
 # Create a text element and let the reader know the data is loading.
 data_load_state = st.info('Loading data...')
-# Load 10,000 rows of data into the dataframe.
-X_train, X_test, y_train, y_test = util.get_data()
+# Load rows of data 
+patient_data = util.get_data()
+X_train, X_test, y_train, y_test = util.split_data(patient_data)
 
 #train model
 data_load_state.info("Training the model..")
@@ -25,33 +26,21 @@ data_load_state.info('Application is ready for predictions.')
 
 ## FORM for Prediction
 st.subheader("Fill in your patient data here for diagnosis")
+input_vals = None
 
-with st.form("my_form"):
- 
-    get_values = util.input_data_fields()
-    
-    submitted = st.form_submit_button("Submit")
-    if submitted:
-        data_values = pd.DataFrame([get_values])
-        
-        # Get predictions
-        with st.spinner('Making prediction...'):
-            time.sleep(3)
 
-        print("DATA values: ", data_values)
-        prediction = model.predict(data_values)
-        print("Prediction: ", prediction[0])
+with st.sidebar:
+    st.subheader("Try other values")
 
-        prediction_msg = "No liver disease" if prediction == 0 else "Liver disease"
- 
-        st.subheader("Diagnosis:")
+    randomize = st.button("Generate test patient values")
 
-        if prediction == 0:
-            print("Success")
-            st.success(prediction_msg)
+    if randomize:
+        data_list = util.sample_data(patient_data)
+        idx = random.randint(0, len(data_list))
+        input_vals = data_list[idx]
+        st.json(input_vals)
 
-        else:
-            st.error(prediction_msg)
+util.form_functions(model)
 
 st.markdown(util.page_footer(),unsafe_allow_html=True)
 
