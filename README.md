@@ -11,3 +11,6 @@ The group members are:
 - Medhini Barla
 - Sravya Medikonda
 
+The application has been deployed using Streamlit:
+
+[Liver Disease Prediction Application](https://group-1-the-phoenix-project-group-1-main-anj10e.streamlit.app/)
