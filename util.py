@@ -199,7 +199,7 @@ class Util:
                 color: black;
                 text-align: center;
                 }
-                </style><div class="footer"><p>Developed by <a style='display: block; text-align: center;' href="https://github.com/group-1-the-phoenix/project-group-1" target="_blank">Team Phoenix for DSCI-6002 Final Project</a></p></div>
+                </style><div class="footer"><p>Developed by <a style='display: block; text-align: center;' href="https://github.com/group-1-the-phoenix/liver-disease-detection" target="_blank">Team Phoenix for DSCI-6002 Final Project</a></p></div>
                 """
 
         return footer
