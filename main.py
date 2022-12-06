@@ -26,8 +26,6 @@ data_load_state.info('Application is ready for predictions.')
 
 ## FORM for Prediction
 st.subheader("Fill in your patient data here for diagnosis")
-input_vals = None
-
 
 with st.sidebar:
     st.subheader("Try other values")
