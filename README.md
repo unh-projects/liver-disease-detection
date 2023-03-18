@@ -15,9 +15,9 @@ The application has been deployed using Streamlit:
 
 [Liver Disease Prediction Application](https://group-1-the-phoenix-project-group-1-main-anj10e.streamlit.app/)
 
-![Image](https://github.com/group-1-the-phoenix/liver-disease-detection/tree/main/data/sample1.png)
+![Image](data/sample1.png)
 
-![Image2](https://github.com/group-1-the-phoenix/liver-disease-detection/tree/main/data/sample2.png)
+![Image2](data/sample2.png)
 
 ## How to run 
 
